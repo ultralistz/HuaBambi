@@ -13,7 +13,6 @@
 
         <!--=============== JS ===============-->
         <script src="<?php echo SITEURL; ?>asset/js/sweetalert2.js"></script>
-        <script src="<?php echo SITEURL; ?>asset/js/main.js"></script>
 
         <title><?php echo "小花斑比 - ".$page_title ?></title>
 
