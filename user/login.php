@@ -11,15 +11,59 @@ include('partials/menu_login_page.php');
 
 
 <?php
-    if(isset($_SESSUON['signup_seccess']))
+    //已登入則離開登入頁面
+    if(isset($_SESSION['user_login_id']))
     {
-        echo $_SESSION['signup_seccess'];
-        unset($_SESSION['signup_seccess']);
+        header('location:'.SITEURL);
+    }
 
+    //登入失敗提示
+    if(isset($_SESSION['login__failed__msg']))
+    {
+        ?>
+        <script>
+            Swal.fire
+            ({
+                icon: 'error',
+                title: '登入失敗',
+                text: '帳號密碼並不相符或帳號並不存在',
+            })
+        </script>
+        <?php
+        unset($_SESSION['login__failed__msg']);
+    }
+
+    //登出提示
+    if(isset($_SESSION['logout__success__msg']))
+    {
+        ?>
+        <script>
+            Swal.fire
+            (
+                '登出成功',
+                '期待您的回歸！'
+            )
+        </script>
+        <?php
+        unset($_SESSION['logout__success__msg']);
+    }
+
+    //登入欄位空白提示
+    if(isset($_SESSION['logout__null__msg']))
+    {
+        ?>
+        <script>
+            Swal.fire
+            ({
+                icon: 'error',
+                title: '登入失敗',
+                text: '帳號或密碼尚未填寫',
+            })
+        </script>
+        <?php
+        unset($_SESSION['logout__null__msg']);
     }
 ?>
-
-
 
 
 <main class="main">
@@ -107,18 +151,20 @@ if(isset($_POST['submit_login']))
 
             $_SESSION['user_login_id'] = $user_login_id;
             $_SESSION['user_login_email'] = $user_login_email;
+
+            $_SESSION['login__success__msg'] = "";
+
             header('location:'.SITEURL);
-            //登入成功提示字
         }
         else
         {
+            $_SESSION['login__failed__msg'] = "";
             header('location:'.SITEURL.'user/login.php');
-            //登入失敗提示字
         }
     }
     else
     {
-        echo "使用者名稱或密碼錯誤" ;
+        $_SESSION['login__null__msg'] = "";
     }
 }
 

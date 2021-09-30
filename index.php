@@ -9,6 +9,27 @@ include('user/partials/user_login_check_menu.php');
 ?>
 
 
+<!--=============== 提示字 ===============-->
+<?php
+
+//登入提示字
+if(isset($_SESSION['login__success__msg']))
+{
+    ?>
+    <script>
+        Swal.fire
+        (
+            '登入成功'
+        )
+    </script>
+    <?php
+    unset($_SESSION['login__success__msg']);
+}
+
+?>
+
+
+<!--=============== 主區塊 ===============-->
 <main class="main main__BG">
     <!--=============== 首頁 ===============-->
     <section class="home section" id="home">
@@ -72,6 +93,7 @@ include('user/partials/user_login_check_menu.php');
                     加入會員享有會員價
                 </p>
             </div>
+
         </div>
     </section>
 
@@ -89,9 +111,7 @@ include('user/partials/user_login_check_menu.php');
 
     <section class="services section container" id="featured">
         <h2 class="section__title">精選商品</h2>
-        
         <div class="featured__container grid">
-
 
             <?php
             if($count>0)
@@ -124,19 +144,18 @@ include('user/partials/user_login_check_menu.php');
                             }
 
                             ?>
-
                         </div>
 
                         <div class="content__box">
-                            <div class="featured__content">
 
+                            <div class="featured__content">
                                 <h3><?php echo $featured_title ; ?></h3>
                                 <br>
                                 <h5><?php echo "每盒為：".$featured_price." NTD"; ?></h5>
                                 <br>
                                 <p><?php echo $featured_description; ?></p>
-
                             </div>
+
                         </div>
                     </div>
                     <?php
@@ -150,6 +169,7 @@ include('user/partials/user_login_check_menu.php');
     <!--=============== 聯絡我們 ===============-->
     <section class="contact section container">
         <div class="contact__container grid">
+
             <div class="contact__content">
                 <h2 class="section__title-center">聯絡我們 <br> 我們會盡快為您服務</h2>
                 <p class="contact__description">若您有任何疑問或建議，歡迎留下您寶貴的意見；我們將盡速與您回覆，謝謝。</p>
@@ -164,9 +184,11 @@ include('user/partials/user_login_check_menu.php');
             <div class="contact__content">
                 <a href="#" class="button">線上表單</a>
             </div>
+
         </div>
     </section>
 </main>
 
 
+<!-- =============== Footer =============== -->
 <?php include('user/partials/footer.php'); ?>

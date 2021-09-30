@@ -8,7 +8,7 @@ include('partials/user_login_check_menu.php');
 
 ?>
 
-
+<!-- =============== 主區塊 =============== -->
 <main class="main main__BG">
     <!--=============== 全部商品 ===============-->
     <?php
@@ -26,7 +26,6 @@ include('partials/user_login_check_menu.php');
 
             <h2 class="section__title-center">全部商品</h2>
 
-
         </div>
         
 
@@ -39,15 +38,12 @@ include('partials/user_login_check_menu.php');
 
                 <br>
 
-
             </div>
         </div>
 
 
         <?php
-
         $category_id = $_GET['id'];
-
         ?>
 
 
@@ -67,7 +63,7 @@ include('partials/user_login_check_menu.php');
 
                     switch($category_id)
                     {
-                        //全部商品
+                        //===============全部商品===============
                         case 0:
                             ?>
 
@@ -95,7 +91,7 @@ include('partials/user_login_check_menu.php');
                             break;
 
 
-                        //瑪德蓮
+                        //===============瑪德蓮===============
                         case 1:
                             ?>
 
@@ -131,7 +127,7 @@ include('partials/user_login_check_menu.php');
                             break;
 
 
-                        //雪Q餅
+                        //===============雪Q餅===============
                         case 2:
                             ?>
 
@@ -165,27 +161,11 @@ include('partials/user_login_check_menu.php');
                             </div>
                             <?php
                             break;
-
-
                     }
-                    ?>
-
-                    
-
-
-                    
-                    <?php  
                 }
             }
             ?>
         </div>
-
-
-
-
-
-
-
     </section>
 </main>
 

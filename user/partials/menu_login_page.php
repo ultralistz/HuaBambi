@@ -21,12 +21,12 @@
                 </li>
 
                 <li class="nav__item">
-                    <a href="<?php echo SITEURL ?>user/profile.php" class="nav__link">我的帳戶</a>
+                    <a href="<?php echo SITEURL ?>user/account.php" class="nav__link">我的帳戶</a>
                 </li>
 
                 <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
 
-                <a href="<?php echo SITEURL ?>user/login.php" class="button__cart"><img src="<?php echo SITEURL ?>asset/img/cart.png" width="25px"></a>
+                <a href="<?php echo SITEURL ?>user/cart.php" class="button__cart"><img src="<?php echo SITEURL ?>asset/img/cart.png" width="25px"></a>
                 <a href="#" onclick="toggleForm();" class="button">登入/註冊</a>
             </ul>
         </div>

@@ -920,7 +920,7 @@ body.dark-theme
 }
 
 
-/*全部商品 Card*/
+/*=============== 全部商品 card ===============*/
 .card__text
 {
   width: 150px;
@@ -974,14 +974,14 @@ body.dark-theme
 }
 
 
-/*=============== 我的檔案 ===============*/
-.profile__container
+/*=============== 我的帳戶 ===============*/
+.account__container
 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.profile__data
+.account__data
 {
   display: grid;
   row-gap: 0.5rem;
@@ -992,14 +992,14 @@ body.dark-theme
   text-align: center;
 }
 
-.profile__img
+.account__img
 {
   width: 135px;
   justify-self: center;
   margin-bottom: var(--mb-0-5);
 }
 
-.profile__menu
+.account__menu
 {
   width: 50%;
   font-size: var(--normal-font-size);
@@ -1016,17 +1016,17 @@ body.dark-theme
   align-items: center;
 }
 
-.profile__menu:hover
+.account__menu:hover
 { 
   box-shadow: none;
 }
 
-.profile__menu:focus
+.account__menu:focus
 {
   box-shadow: none;
 }
 
-.profile__menu__icon
+.account__menu__icon
 {
   width: 15px;
   height: 15px;
@@ -1035,28 +1035,28 @@ body.dark-theme
   background: var(--first-color);
 }
 
-.profile__menu:hover .profile__menu__icon
+.account__menu:hover .account__menu__icon
 { 
   border-radius: 10%;
   transform: rotate(45deg) scale(0.8);
   background: #e73e49;
 }
 
-.profile__menu:focus .profile__menu__icon
+.account__menu:focus .account__menu__icon
 { 
   border-radius: 10%;
   transform: rotate(45deg) scale(0.8);
   background: #e73e49;
 }
 
-.profile__menu:unv .profile__menu__icon
+.account__menu:unv .account__menu__icon
 { 
   border-radius: 10%;
   transform: rotate(45deg) scale(0.8);
   background: #e73e49;
 }
 
-.profile__content
+.account__content
 {
   width: 100%;
   height: auto;
@@ -1073,7 +1073,7 @@ body.dark-theme
   gap: 1rem;
 }
 
-.profile__content__inner
+.account__content__inner
 {
   width: 60%;
   height: auto;
@@ -1092,7 +1092,7 @@ body.dark-theme
   transition: 1s;
 }
 
-.profile__content__inner__submit
+.account__content__inner__submit
 {
   width: 60%;
   height: auto;
@@ -1111,7 +1111,7 @@ body.dark-theme
   transition: 1s;
 }
 
-.profile__content__inner__title
+.account__content__inner__title
 {
   width: 60%;
   height: auto;
@@ -1130,7 +1130,7 @@ body.dark-theme
   transition: 1s;
 }
 
-.profile__button__inner
+.account__button__inner
 {
   width: 80px;
   height: auto;
@@ -1143,18 +1143,18 @@ body.dark-theme
   border-radius: 2rem;
 }
 
-.profile__content__inner:hover
+.account__content__inner:hover
 {
   background-color: var(--login-color);
 }
 
-.profile__content__inner:focus
+.account__content__inner:focus
 {
   border-radius: 2rem;
   background-color: var(--login-color);
 }
 
-.profile__content__inner__submit:hover
+.account__content__inner__submit:hover
 {
   background-color: #ec1826;
 }
