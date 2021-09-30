@@ -3,9 +3,9 @@
 $page_title = "我的帳戶";
 include('../config/constants.php');
 
-include('../user/partials/header.php');
-include('../user/partials/user_login_check.php');
-include('../user/partials/user_login_check_menu.php');
+include('partials/header.php');
+include('partials/user_login_check.php');
+include('partials/user_login_check_menu.php');
 
 
 $user_login_id = $_SESSION['user_login_id'];

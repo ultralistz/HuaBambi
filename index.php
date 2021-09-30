@@ -19,7 +19,9 @@ if(isset($_SESSION['login__success__msg']))
     <script>
         Swal.fire
         (
-            '登入成功'
+            '登入成功',
+            '歡迎回來!',
+            'success'
         )
     </script>
     <?php

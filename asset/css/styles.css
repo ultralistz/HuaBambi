@@ -446,6 +446,7 @@ body.dark-theme
 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
+  transition: 1s;
 }
 
 .nav__toggle
@@ -460,6 +461,21 @@ body.dark-theme
   height: 40px;
 }
 
+.nav__icon
+{
+  width: 15px;
+  height: 15px;
+  transition: 1s;
+  border-radius: 50%;
+  background: var(--first-color);
+}
+
+.nav__link:hover .nav__icon
+{ 
+  border-radius: 10%;
+  transform: rotate(45deg) scale(0.8);
+  background: #e73e49;
+}
 
 /* Menu 小點 */
 .active-link

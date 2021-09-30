@@ -33,7 +33,7 @@ include('partials/menu_login_page.php');
         unset($_SESSION['login__failed__msg']);
     }
 
-    //登出提示
+    //登出成功提示
     if(isset($_SESSION['logout__success__msg']))
     {
         ?>
@@ -41,7 +41,8 @@ include('partials/menu_login_page.php');
             Swal.fire
             (
                 '登出成功',
-                '期待您的回歸！'
+                '期待您的回歸！',
+                'success'
             )
         </script>
         <?php
