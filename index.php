@@ -28,6 +28,21 @@ if(isset($_SESSION['login__success__msg']))
     unset($_SESSION['login__success__msg']);
 }
 
+if(isset($_SESSION['order__success__msg']))
+{
+    ?>
+    <script>
+        Swal.fire
+        (
+            '訂購成功',
+            '謝謝您的支持!',
+            'success'
+        )
+    </script>
+    <?php
+    unset($_SESSION['order__success__msg']);
+}
+
 ?>
 
 

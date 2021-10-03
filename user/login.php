@@ -64,6 +64,22 @@ include('partials/menu_login_page.php');
         <?php
         unset($_SESSION['logout__null__msg']);
     }
+
+    if(isset($_SESSION['signup__success__msg']))
+    {
+        ?>
+        <script>
+            Swal.fire
+            (
+                '註冊成功',
+                '可以開始訂購囉!',
+                'success'
+            )
+        </script>
+        <?php
+        unset($_SESSION['signup__success__msg']);
+    }
+
 ?>
 
 
@@ -193,7 +209,8 @@ if(isset($_POST['submit_signup']))
 
             if($res_signup==TRUE)
             {
-                $_SESSION['signup_seccess'] = "新增會員成功" ;
+                $_SESSION['signup__success__msg'] = "";
+
                 header("location:".SITEURL.'user/login.php');
             }
         }
