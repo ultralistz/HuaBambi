@@ -30,7 +30,7 @@
                 </li>
 
                 <li class="nav__item">
-                    <a href="<?php echo SITEURL ?>user/product.php?id=0&cart__count=none" class="nav__link">全部商品</a>
+                    <a href="<?php echo SITEURL ?>user/product.php" class="nav__link">全部商品</a>
                 </li>
 
                 <li class="nav__item">
