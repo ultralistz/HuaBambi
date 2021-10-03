@@ -17,7 +17,7 @@
                 </li>
 
                 <li class="nav__item">
-                    <a href="<?php echo SITEURL ?>user/product.php?id=0" class="nav__link">全部商品</a>
+                    <a href="<?php echo SITEURL ?>user/product.php?id=0&cart__count=none" class="nav__link">全部商品</a>
                 </li>
 
                 <li class="nav__item">
@@ -26,7 +26,23 @@
 
                 <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
 
-                <a href="<?php echo SITEURL ?>user/cart.php" class="button__cart"><img src="<?php echo SITEURL ?>asset/img/cart.png" width="25px"></a>
+                <a href="<?php echo SITEURL ?>user/cart.php" class="button__cart">
+                    購物車 •
+                    
+                    <?php
+
+                    if (isset($_SESSION['cart'])){
+                        $cc_count = count($_SESSION['cart']);
+                        echo "<span id=\"cart_count\">$cc_count</span>";
+                    }
+                    else
+                    {
+                        echo "<span id=\"cart_count\">0</span>";
+                    }
+
+                    ?>
+                </a>
+                
                 <a href="#" onclick="toggleForm();" class="button">登入/註冊</a>
             </ul>
         </div>

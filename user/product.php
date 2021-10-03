@@ -1,12 +1,51 @@
 <?php
-
 $page_title = "商品";
 include('../config/constants.php');
 
 include('partials/header.php');
 include('partials/user_login_check_menu.php');
-
+include('../config/component.php')
 ?>
+
+
+<?php
+if(isset($_POST['button__cart__add']))
+{
+    ?><meta http-equiv='refresh' content='0.2'><?php
+
+    if(isset($_SESSION['cart'])){
+
+        $item_array_id = array_column($_SESSION['cart'], "product_id");
+
+        if(in_array($_POST['product_id'], $item_array_id)){
+            echo "<script>alert('Product is already added in the cart..!')</script>";
+            echo "<script>window.location = 'product.php'</script>";
+        }
+        else
+        {
+
+            $cc_count = count($_SESSION['cart']);
+            $item_array = array(
+                'product_id' => $_POST['product_id']
+            );
+
+            $_SESSION['cart'][$cc_count] = $item_array;
+        }
+
+    }
+    else
+    {
+        $item_array = array(
+                'product_id' => $_POST['product_id']
+        );
+
+        // Create new session variable
+        $_SESSION['cart'][0] = $item_array;
+        print_r($_SESSION['cart']);
+    }
+}
+?>
+
 
 <!-- =============== 主區塊 =============== -->
 <main class="main main__BG">
@@ -40,12 +79,7 @@ include('partials/user_login_check_menu.php');
 
             </div>
         </div>
-
-
-        <?php
-        $category_id = $_GET['id'];
-        ?>
-
+        
 
         <div class="product__container grid">
             <?php
@@ -60,108 +94,8 @@ include('partials/user_login_check_menu.php');
                     $product_description = $row['description'];
                     $product_category = $row['category_id'];
 
-
-                    switch($category_id)
-                    {
-                        //===============全部商品===============
-                        case 0:
-                            ?>
-
-                            <div class="product__sub__container grid">
-                                <div class="card__img">
-                                    <div class="img__box">
-
-                                        <img src="<?php echo IMGURL_USER; ?>food/<?php echo $product_image_name; ?>" class="services__img">     
-                                        
-                                    </div>
-                                </div>   
-
-                                <div class="card__text">
-                                    <div class="content__box">
-                                        <d3><?php echo $product_title ?></d3>
-                                        <br>
-                                        <h5><?php echo "每盒：".$product_price." NTD"; ?></h5>
-                                        <br>
-                                        <a href="<?php echo SITEURL; ?>user/login.php" class="button__cart__add">加入購物車</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                            break;
-
-
-                        //===============瑪德蓮===============
-                        case 1:
-                            ?>
-
-                            <div class="product__sub__container grid">
-                                <?php
-                                if($product_category==1)
-                                {
-                                ?>
-
-                                    <div class="card__img">
-                                        <div class="img__box">
-
-                                            <img src="<?php echo IMGURL_USER; ?>food/<?php echo $product_image_name; ?>" class="services__img">     
-                                            
-                                        </div>
-                                    </div>   
-
-                                    <div class="card__text">
-                                        <div class="content__box">
-                                            <d3><?php echo $product_title ?></d3>
-                                            <br>
-                                            <h5><?php echo "每盒：".$product_price." NTD"; ?></h5>
-                                            <br>
-                                            <a href="<?php echo SITEURL; ?>user/login.php" class="button__cart__add">加入購物車</a>
-                                            
-                                        </div>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                            <?php
-                            break;
-
-
-                        //===============雪Q餅===============
-                        case 2:
-                            ?>
-
-                            <div class="product__sub__container grid">
-                                <?php
-                                if($product_category==2)
-                                {
-                                ?>
-
-                                    <div class="card__img">
-                                        <div class="img__box">
-
-                                            <img src="<?php echo IMGURL_USER; ?>food/<?php echo $product_image_name; ?>" class="services__img">     
-                                            
-                                        </div>
-                                    </div>   
-
-                                    <div class="card__text">
-                                        <div class="content__box">
-                                            <d3><?php echo $product_title ?></d3>
-                                            <br>
-                                            <h5><?php echo "每盒：".$product_price." NTD"; ?></h5>
-                                            <br>
-                                            <a href="<?php echo SITEURL; ?>user/login.php" class="button__cart__add">加入購物車</a>
-                                            
-                                        </div>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                            <?php
-                            break;
-                    }
+                    component($product_title, $product_price, $product_image_name, $product_id);
+                    
                 }
             }
             ?>
