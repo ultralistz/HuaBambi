@@ -18,7 +18,7 @@ function component($productname, $productprice, $productimg, $productid)
 
                 <a href=\"$siteurl\\user\\product_each.php?id=$productid\" name=\"button__cart__search\" class=\"button__cart__search\"></a>
                 <br>
-                <a href=\"$siteurl\\user\\product_each.php?id=$productid\" name=\"button__cart__add\" class=\"button__cart__add\"></a>  
+                <button name=\"button__cart__add\" class=\"button__cart__add\"></button>  
 
                 <input type='hidden' name='product_id' value='$productid'>
 

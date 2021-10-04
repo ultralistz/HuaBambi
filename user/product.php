@@ -18,7 +18,7 @@ if(isset($_POST['button__cart__add']))
         $item_array_id = array_column($_SESSION['cart'], "product_id");
 
         if(in_array($_POST['product_id'], $item_array_id)){
-            echo "<script>alert('Product is already added in the cart..!')</script>";
+            echo "<script>alert('購物車已有相同商品')</script>";
             echo "<script>window.location = 'product.php'</script>";
         }
         else
@@ -63,22 +63,10 @@ if(isset($_POST['button__cart__add']))
     <section class="product section container" id="product">
         <div class="product__container grid">
 
-            <h2 class="section__title-center">全部商品</h2>
-
+            <h2 class="section__title-center">全部商品<br><br></h2>
+            
         </div>
         
-
-        <div class="product__container grid">
-            <div class="product__buttons">
-
-                <a href="<?php echo SITEURL ?>user/product.php?id=0" class="button__category">全部商品</a>
-                <a href="<?php echo SITEURL ?>user/product.php?id=1" class="button__category">瑪德蓮</a>
-                <a href="<?php echo SITEURL ?>user/product.php?id=2" class="button__category">雪Q餅</a>
-
-                <br>
-
-            </div>
-        </div>
         
 
         <div class="product__container grid">
