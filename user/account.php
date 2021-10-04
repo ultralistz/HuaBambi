@@ -8,6 +8,37 @@ include('partials/user_login_check.php');
 include('partials/user_login_check_menu.php');
 
 
+if(isset($_SESSION['account_update_success']))
+{
+    ?>
+    <script>
+        Swal.fire
+        (
+            '修改成功',
+            '會員資料已更新！',
+            'success'
+        )
+    </script>
+    <?php
+    unset($_SESSION['account_update_success']);
+}
+
+if(isset($_SESSION['account_update_error']))
+{
+    ?>
+    <script>
+        Swal.fire
+        ({
+            icon: 'error',
+            title: '修改失敗',
+            text: '會員資料修改失敗，請稍後再試！',
+        })
+    </script>
+    <?php
+    unset($_SESSION['account_update_error']);
+}
+
+
 $user_login_id = $_SESSION['user_login_id'];
 $user_login_email = $_SESSION['user_login_email'];
 
@@ -18,7 +49,6 @@ $rows_account = mysqli_fetch_assoc($res_account);
 
 $current_user_full_name = $rows_account['user_full_name'];
 $current_user_email = $rows_account['user_email'];
-$current_user_password = $rows_account['user_password'];
 
 ?>
 
@@ -53,15 +83,15 @@ $current_user_password = $rows_account['user_password'];
 
                 <br>
 
-                <input class="account__content__inner" type="text" name="change_user_full_name" placeholder="<?php echo $current_user_full_name ?>">
+                <input type="text" class="account__content__inner" name="change_user_full_name" value="<?php echo $current_user_full_name ?>">
 
-                <input class="account__content__inner" type="text" name="change_user_email" placeholder="<?php echo $current_user_email ?>">
+                <input type="text" class="account__content__inner" name="change_user_email" value="<?php echo $current_user_email ?>">
 
                 <a class="account__content__inner" href="<?php echo SITEURL ?>un.php">更改密碼</a>
 
                 <br>
 
-                <input class="account__content__inner__submit" type="submit" name="change_user_submit" value="儲存變更">
+                <input type="submit" class="account__content__inner__submit" name="submit_user" value="儲存變更">
 
             </form>
         </div>
@@ -69,8 +99,33 @@ $current_user_password = $rows_account['user_password'];
 </main>
 
 
+
+
 <?php
-if(isset($_POST))
+if(isset($_POST['submit_user']))
+{
+    $update_user_full_name = $_POST['change_user_full_name'];
+    $update_user_email = $_POST['change_user_email'];
+
+    $sql_update = "UPDATE tbl_user SET
+        user_full_name = '$update_user_full_name',
+        user_email = '$update_user_email',
+        WHERE user_id = '$user_login_id'
+    ";
+
+    $res_update = mysqli_query($conn, $sql_update);
+
+    if($res_update==true)
+    {
+        header('location:'.SITEURL.'user/account.php');
+        $_SESSION['account_update_success'] = "";
+    }
+    else
+    {
+        header('location:'.SITEURL.'user/account.php');
+        $_SESSION['account_update_error'] = "";
+    }
+}
 ?>
 
 

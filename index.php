@@ -53,7 +53,6 @@ if(isset($_SESSION['order__success__msg']))
         <div>
     <!--=============== 首頁 ===============-->
     <section class="home section" id="home">
-
         <div class="home__container container grid">
 
 
@@ -72,7 +71,7 @@ if(isset($_SESSION['order__success__msg']))
                     <img src="<?php echo IMGURL_USER; ?>check.png" width="12px">&nbsp履歷雞蛋
                 </p>
 
-                <a href="<?php echo SITEURL ?>user/product.php?id=0" class="button">開始訂購</a>
+                <a href="<?php echo SITEURL ?>user/product.php?id=0" class="button__start"><p>開始訂購</p></a>
             </div>   
 
             <img src="<?php echo IMGURL_USER; ?>home_pre_01.png" class="home__img">
@@ -82,6 +81,11 @@ if(isset($_SESSION['order__success__msg']))
 
     <!--=============== 我們的承諾 ===============-->
     <section class="services section container" id="services">
+
+        <img src="<?php echo IMGURL_USER ?>title_gap_01.png">
+
+        <br><br><br>
+
         <h2 class="section__title">我們的承諾</h2>
 
         <div class="services__container grid">
@@ -131,6 +135,11 @@ if(isset($_SESSION['order__success__msg']))
 
 
     <section class="services section container" id="featured">
+
+        <img src="<?php echo IMGURL_USER ?>title_gap_01.png">
+
+        <br><br><br>
+
         <h2 class="section__title">精選商品</h2>
         <div class="featured__container grid">
 

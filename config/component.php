@@ -27,11 +27,11 @@ function component($productname, $productprice, $productimg, $productid)
             <div class=\"card__text\">
                 <div class=\"content__box\"> 
 
-                    <d3>$productname</d3>
+                    <d3>• $productname •</d3>
 
-                    <br><br>
+                    <br>
 
-                    <h5>$productprice</h5>
+                    <h5>$productprice NTD</h5>
                         
                 </div>
             </div>
