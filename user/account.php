@@ -39,7 +39,7 @@ $current_user_password = $rows_account['user_password'];
                     <div class="account__menu__icon"></div>
                 </a>
 
-                <a href="<?php SITEURL; ?>account.php#order" class="account__menu">
+                <a href="<?php echo SITEURL ?>un.php" class="account__menu">
                     訂單資訊 <br><br>
                     <div class="account__menu__icon"></div>
                 </a>
@@ -57,7 +57,7 @@ $current_user_password = $rows_account['user_password'];
 
                 <input class="account__content__inner" type="text" name="change_user_email" placeholder="<?php echo $current_user_email ?>">
 
-                <a class="account__content__inner" href="#">更改密碼</a>
+                <a class="account__content__inner" href="<?php echo SITEURL ?>un.php">更改密碼</a>
 
                 <br>
 

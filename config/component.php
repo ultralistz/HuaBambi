@@ -1,7 +1,9 @@
 <?php
 
 
-function component($productname, $productprice, $productimg, $productid){
+function component($productname, $productprice, $productimg, $productid)
+{
+    $siteurl = SITEURL;
     $imgurl = IMGURL_USER."food/";
     $element = "
     
@@ -14,7 +16,10 @@ function component($productname, $productprice, $productimg, $productid){
                 
                 </div>
 
-                <button type=\"submit\" name=\"button__cart__add\" class=\"button__cart__add\">加入購物車</button>
+                <a href=\"$siteurl\\user\\product_each.php?id=$productid\" name=\"button__cart__search\" class=\"button__cart__search\"></a>
+                <br>
+                <a href=\"$siteurl\\user\\product_each.php?id=$productid\" name=\"button__cart__add\" class=\"button__cart__add\"></a>  
+
                 <input type='hidden' name='product_id' value='$productid'>
 
             </div>
@@ -23,6 +28,8 @@ function component($productname, $productprice, $productimg, $productid){
                 <div class=\"content__box\"> 
 
                     <d3>$productname</d3>
+
+                    <br><br>
 
                     <h5>$productprice</h5>
                         

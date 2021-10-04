@@ -48,8 +48,12 @@ if(isset($_SESSION['order__success__msg']))
 
 <!--=============== 主區塊 ===============-->
 <main class="main main__BG">
+<div class="home__banner">
+            <img src="<?php echo IMGURL_USER ?>huabambi_banner.png"; width="100%">
+        <div>
     <!--=============== 首頁 ===============-->
     <section class="home section" id="home">
+
         <div class="home__container container grid">
 
 
@@ -82,7 +86,7 @@ if(isset($_SESSION['order__success__msg']))
 
         <div class="services__container grid">
             <div class="services__data">
-                <h3 class="services__subtitle">免運</h3>
+                <h3 class="services__subtitle">滿額免運</h3>
 
                 <img src="<?php echo IMGURL_USER; ?>service_pre_01.png" class="services__img">
 
@@ -92,12 +96,12 @@ if(isset($_SESSION['order__success__msg']))
             </div>
 
             <div class="services__data">
-                <h3 class="services__subtitle">一日出貨</h3>
+                <h3 class="services__subtitle">三日出貨</h3>
 
                 <img src="<?php echo IMGURL_USER; ?>service_pre_02.png" class="services__img">
 
                 <p class="services__description">
-                    訂單完成後24小時內出貨(限工作天)
+                    訂單完成後72小時內出貨
                 </p>
             </div>
 

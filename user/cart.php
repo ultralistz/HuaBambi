@@ -15,8 +15,15 @@ if (isset($_POST['remove'])){
         foreach ($_SESSION['cart'] as $key => $value){
             if($value["product_id"] == $_GET['id']){
                 unset($_SESSION['cart'][$key]);
-                echo "<script>alert('Product has been Removed...!')</script>";
-                echo "<script>window.location = 'cart.php'</script>";
+                echo "
+                <script>
+                Swal.fire
+                (
+                    '商品移除成功',
+                    '',
+                    'success'
+                )
+                </script>";
             }
         }
     }

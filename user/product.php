@@ -93,8 +93,22 @@ if(isset($_POST['button__cart__add']))
                     $product_price = $row['price'];
                     $product_description = $row['description'];
                     $product_category = $row['category_id'];
+                    
+                    switch($product_category)
+                    {
+                        case 0:
+                            component($product_title, $product_price, $product_image_name, $product_id);
+                            break;
 
-                    component($product_title, $product_price, $product_image_name, $product_id);
+                        case 1:
+                            component($product_title, $product_price, $product_image_name, $product_id);
+                            break;
+
+                        case 2:
+                            component($product_title, $product_price, $product_image_name, $product_id);
+                    }
+
+                    
                     
                 }
             }

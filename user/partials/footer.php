@@ -4,7 +4,7 @@
             <div class="footer__container container grid">
                 <div class="footer__content">
 
-                    <a href="#home" class="footer__logo">小花斑比<br>Hua Bambi</a>
+                    <a href="<?php echo SITEURL; ?>" class="footer__logo">小花斑比<br>Hua Bambi</a>
                     <p class="footer__description">吃得安心，健康</p>
 
                 </div>
@@ -15,8 +15,8 @@
                     <div class="footer__content">
                         <h3 class="footer__title">訂單紀錄</h3>
                         <ul class="footer__links">
-                            <li><a href="#" class="footer__link">訂單查詢</a></li>
-                            <li><a href="#" class="footer__link">訂單相關說明</a></li>
+                            <li><a href="<?php echo SITEURL ?>un.php" class="footer__link">訂單查詢</a></li>
+                            <li><a href="<?php echo SITEURL ?>un.php" class="footer__link">訂單相關說明</a></li>
                         </ul>
                     </div>
                 </div>
@@ -24,16 +24,16 @@
                 <div class="footer__content">
                     <h3 class="footer__title">寄送方式</h3>
                     <ul class="footer__links">
-                        <li><a href="#" class="footer__link">寄送方式說明</a></li>
-                        <li><a href="#" class="footer__link">售後服務說明</a></li>
+                        <li><a href="<?php echo SITEURL ?>un.php" class="footer__link">寄送方式說明</a></li>
+                        <li><a href="<?php echo SITEURL ?>un.php" class="footer__link">售後服務說明</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__content">
                     <h3 class="footer__title">技術支援</h3>
                     <ul class="footer__links">
-                        <li><a href="#" class="footer__link">問題回報</a></li>
-                        <li><a href="#" class="footer__link">隱私權條款</a></li>
+                        <li><a href="<?php echo SITEURL ?>un.php" class="footer__link">問題回報</a></li>
+                        <li><a href="<?php echo SITEURL ?>un.php" class="footer__link">隱私權條款</a></li>
                     </ul>
                 </div>
 
