@@ -48,9 +48,11 @@ if(isset($_SESSION['order__success__msg']))
 
 <!--=============== 主區塊 ===============-->
 <main class="main main__BG">
-<div class="home__banner">
-            <img src="<?php echo IMGURL_USER ?>huabambi_banner.png"; width="100%">
-        <div>
+
+    <div class="home__banner__container">
+        <img class="home__banner" src="<?php echo IMGURL_USER ?>huabambi_banner.png">
+    </div>
+        
     <!--=============== 首頁 ===============-->
     <section class="home section" id="home">
         <div class="home__container container grid">
@@ -74,7 +76,9 @@ if(isset($_SESSION['order__success__msg']))
                 <a href="<?php echo SITEURL ?>user/product.php?id=0" class="button__start"><p>開始訂購</p></a>
             </div>   
 
-            <img src="<?php echo IMGURL_USER; ?>home_pre_01.png" class="home__img">
+            <div>
+                <img src="<?php echo IMGURL_USER; ?>home_pre_01.jpg" class="home__img">
+            </div>
         </div>
     </section>
 

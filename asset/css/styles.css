@@ -601,6 +601,15 @@ body.dark-theme
   width: 100%;
 }
 
+.home__banner__container
+{
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 
 /*=============== 按鈕 ===============*/
 .button
@@ -1948,6 +1957,8 @@ text-decoration: none;
 
   .home__img
   {
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px hsla(var(--hue), 100%, 15%, 0.15);
     order: 1;
   }
 
@@ -2141,6 +2152,12 @@ text-decoration: none;
   {
     width: 50px;
     height: 50px;
+  }
+
+  .home__banner__container
+  {
+    margin-top: 50px;
+    height: 400px;
   }
 }
 
