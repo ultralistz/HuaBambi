@@ -332,7 +332,7 @@ body.dark-theme
 .login__section .login__container .login__user .login__formBx input[type="submit"]
 {
   max-width: 100px;
-  background: var(--earth-tone);
+  background: var(--yellow-main);
   color: #1A1A1A;
   cursor: pointer;
   font-size: 14px;
@@ -809,6 +809,7 @@ text-decoration: none;
 
 .button__login
 {
+
   display: inline-block;;
   color: #ffffff;
   padding: .75rem 1.5rem;

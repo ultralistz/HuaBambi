@@ -58,6 +58,8 @@ $select_product_image_name = $rows_select['image_name'];
                             <br>
                             <h5 class="cart__price__sub"><?php echo $select_product_price ?> NTD</h5>
                             <br>
+                            <a href="<?php echo SITEURL; ?>user/product.php" class="button__cart__remove">返回</a>
+                            <br>
                         </div>
 
                     </div>
