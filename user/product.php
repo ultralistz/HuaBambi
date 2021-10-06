@@ -22,8 +22,8 @@ if(isset($_POST['button__cart__add']))
                 Swal.fire
                 ({
                     icon: 'error',
-                    title: '修改失敗',
-                    text: '會員資料修改失敗，請稍後再試！',
+                    title: '新增失敗',
+                    text: '購物車中已有相同商品！',
                 })
             </script>
             <?php
